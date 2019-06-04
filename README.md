@@ -40,9 +40,9 @@ PASS
 ok  	github.com/xyproto/swish	1.108s
 ```
 
-The optimized `Swish` function is *34x* faster than the one that uses `math.Exp`.
+The optimized `Swish` function is **34x** faster than the one that uses `math.Exp`.
 
-The average difference between the optimized and non-optimzed version is `+-0.0013` and the maximum difference in precision is `+-0.0024`. This is when `x` is in the range `[5,3]`. See the program in `cmd/precision` for how this was calculated.
+The average difference between the optimized and non-optimized version is `+-0.0013` and the maximum difference in precision is `+-0.0024`. This is when `x` is in the range `[5,3]`. See the program in `cmd/precision` for how this was calculated.
 
 ## General info
 
