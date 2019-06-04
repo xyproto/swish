@@ -28,7 +28,7 @@ func main() {
 	tm.Println(chart.Draw(data))
 	tm.Flush()
 
-	tm.Println("\n" + tm.Bold(tm.Color("The SWISH activation function: ", tm.WHITE)) + tm.Color("x / (1 + exp(-x))", tm.BLUE) + "\n")
+	tm.Println("\n" + tm.Bold(tm.Color("The Swish activation function: ", tm.WHITE)) + tm.Color("x / (1 + exp(-x))", tm.BLUE) + "\n")
 
 	chart = tm.NewLineChart(width, height)
 	chart.Flags = tm.DRAW_RELATIVE
