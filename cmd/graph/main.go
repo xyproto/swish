@@ -13,8 +13,9 @@ func main() {
 
 	// Use 70% of the terminal width
 	width := int(float64(tm.Width()) * 0.7)
+	height := int(float64(width) * 0.3)
 
-	chart := tm.NewLineChart(width, 60)
+	chart := tm.NewLineChart(width, height)
 	chart.Flags = tm.DRAW_RELATIVE
 	data := new(tm.DataTable)
 	data.AddColumn(" x ")
