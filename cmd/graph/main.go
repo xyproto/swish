@@ -9,7 +9,7 @@ func main() {
 	tm.Clear()
 	tm.MoveCursor(0, 0)
 
-	tm.Println("\n" + tm.Bold(tm.Color("The SWISH activation function: ", tm.WHITE)) + tm.Color("1 / (1 + exp(-x))", tm.BLUE) + "\n")
+	tm.Println("\n" + tm.Bold(tm.Color("The SWISH activation function: ", tm.WHITE)) + tm.Color("x / (1 + exp(-x))", tm.BLUE) + "\n")
 
 	// Use 70% of the terminal width
 	width := int(float64(tm.Width()) * 0.7)
