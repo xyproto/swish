@@ -4,13 +4,11 @@ An optimized Swish activation function ([Ramachandran, Zoph and Le, 2017](https:
 
 ## Screenshots
 
-Output from the graph example in `cmd/graph`:
-
 ![](img/swish.png)
 
 ![](img/sigmoid.png)
 
-The graphs are drawn using [goterm](https://github.com/buger/goterm).
+The graphs above were drawn using the program in `cmd/graph`, which uses [goterm](https://github.com/buger/goterm).
 
 ## Benchmark Results
 
@@ -42,7 +40,7 @@ ok  	github.com/xyproto/swish	1.108s
 
 The optimized `Swish` function is **34x** faster than the one that uses `math.Exp`.
 
-The average difference between the optimized and non-optimized version is `+-0.0013` and the maximum difference in precision is `+-0.0024`. This is when `x` is in the range `[5,3]`. See the program in `cmd/precision` for how this was calculated.
+The average error (difference in output value) between the optimized and non-optimized version is `+-0.0013` and the maximum error is `+-0.0024`. This is for `x` in the range `[5,3]`. See the program in `cmd/precision` for how this was calculated.
 
 ## General info
 
