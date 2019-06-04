@@ -6,6 +6,8 @@ Output from the graph example in `cmd/graph`:
 
 ![](img/swish.png)
 
+The graph is drawn using [goterm](https://github.com/buger/goterm).
+
 ---
 
 Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
