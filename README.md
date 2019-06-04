@@ -28,18 +28,6 @@ PASS
 ok  	github.com/xyproto/swish	5.391s
 ```
 
-Second run:
-
-```
-goos: linux
-goarch: amd64
-pkg: github.com/xyproto/swish
-BenchmarkSwish07-8   	200000000	         8.93 ns/op
-BenchmarkSwish03-8   	200000000	         8.95 ns/op
-PASS
-ok  	github.com/xyproto/swish	5.392s
-```
-
 ### Using the optimized `Swish` function that uses `exp256`
 
 ```
@@ -50,16 +38,6 @@ BenchmarkSwish07-8   	2000000000	         0.26 ns/op
 BenchmarkSwish03-8   	2000000000	         0.26 ns/op
 PASS
 ok  	github.com/xyproto/swish	1.108s
-```
-
-```
-goos: linux
-goarch: amd64
-pkg: github.com/xyproto/swish
-BenchmarkSwish07-8   	2000000000	         0.27 ns/op
-BenchmarkSwish03-8   	2000000000	         0.26 ns/op
-PASS
-ok  	github.com/xyproto/swish	1.099s
 ```
 
 The optimized `Swish` function ix 34x faster than the one that uses `math.Exp`.
