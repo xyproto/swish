@@ -37,7 +37,7 @@ func main() {
 	data.AddColumn(" y ")
 
 	for x := -5.0; x <= 3.0; x += (8.0 / float64(width)) {
-		data.AddRow(x, swish.F(x))
+		data.AddRow(x, swish.Swish(x))
 	}
 
 	tm.Println(chart.Draw(data))
