@@ -21,9 +21,7 @@ func main() {
 
 	w := tabwriter.NewWriter(os.Stdout, 15, 0, 0, ' ', tabwriter.AlignRight)
 	fmt.Fprintln(w, "Swish\tSwishPrecise\tDifference\t")
-	var sumDiff float64
-	var minDiff float64
-	var maxDiff float64
+	var sumDiff, minDiff, maxDiff float64
 	counter := 0
 	for x := -5.0; x <= 3.0; x += 0.1 {
 		a := swish.Swish(x)
