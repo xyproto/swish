@@ -1,5 +1,3 @@
-//+build amd64
-
 #include "textflag.h"
 
 DATA expodata<>+0(SB)/8, $1.0
