@@ -42,6 +42,8 @@ The optimized `Swish` function is **34x** faster than the one that uses `math.Ex
 
 The average error (difference in output value) between the optimized and non-optimized version is `+-0.0013` and the maximum error is `+-0.0024`. This is for `x` in the range `[5,3]`. See the program in `cmd/precision` for how this was calculated.
 
+The hand-optimized Assembly version in the `assembly` branch takes `3.63 ns/op`. Someone experienced with PLAN9-style assembly should probably be able to do better. `0.26 ns/op` isn't bad for the non-hand-optimized version, I think.
+
 ## General info
 
 * Version: 2.0.0
