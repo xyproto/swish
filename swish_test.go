@@ -5,6 +5,13 @@ import (
 	"testing"
 )
 
+func abs(a float64) float64 {
+	if a >= 0 {
+		return a
+	}
+	return -a
+}
+
 // benchmark using exp256
 func BenchmarkSwish07(b *testing.B) {
 	// run the Swish function b.N times
@@ -35,13 +42,6 @@ func BenchmarkSwishPrecise03(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		SwishPrecise(0.3)
 	}
-}
-
-func abs(a float64) float64 {
-	if a >= 0 {
-		return a
-	}
-	return -a
 }
 
 func TestSwish(t *testing.T) {
