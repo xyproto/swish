@@ -38,11 +38,27 @@ PASS
 ok  	github.com/xyproto/swish	1.108s
 ```
 
-The optimized `Swish` function is **34x** faster than the one that uses `math.Exp`.
+The optimized `Swish` function is **34x** faster than the one that uses `math.Exp`, and quite a bit faster than my (apparently bad) attempt at a hand-written assembly version.
 
 The average error (difference in output value) between the optimized and non-optimized version is `+-0.0013` and the maximum error is `+-0.0024`. This is for `x` in the range `[5,3]`. See the program in `cmd/precision` for how this was calculated.
 
-The hand-optimized Assembly version in the `assembly` branch takes `3.63 ns/op`. Someone experienced with PLAN9-style assembly should probably be able to do better. `0.26 ns/op` isn't bad for the non-hand-optimized version, I think.
+```
+0.00015
+0.00001
+goos: linux
+goarch: amd64
+pkg: github.com/xyproto/swish
+BenchmarkSwishAssembly07-8      500000000                3.63 ns/op
+BenchmarkSwishAssembly03-8      500000000                3.65 ns/op
+BenchmarkSwish07-8              2000000000               0.30 ns/op
+BenchmarkSwish03-8              2000000000               0.26 ns/op
+BenchmarkSwishPrecise07-8       200000000                9.07 ns/op
+BenchmarkSwishPrecise03-8       200000000                9.25 ns/op
+PASS
+ok      github.com/xyproto/swish        11.100s
+```
+
+I have no idea why the assembly version is so slow, but `0.26 ns/op` isn't bad for the non-hand-optimized version, I think (the one that uses an approximation for `math.Exp`).
 
 ## General info
 
