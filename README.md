@@ -62,6 +62,6 @@ I have no idea why the assembly version is so slow, but `0.26 ns/op` isn't bad f
 
 ## General info
 
-* Version: 2.0.0
+* Version: 1.1.0
 * License: MIT
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
