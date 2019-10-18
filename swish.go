@@ -32,6 +32,11 @@ func SoftPlus(x float64) float64 {
 	return math.Log(1.0 + exp256(x))
 }
 
+// Gaussian01 is the Gaussian function with mean 0 and sigma 1, using exp256
+func Gaussian01(x float64) float64 {
+	return exp256(-(x * x) / 2.0)
+}
+
 // SwishPrecise is the x / (1 + exp(-x)) activation function, using math.Exp
 func SwishPrecise(x float64) float64 {
 	return x / (1.0 + math.Exp(-x))
@@ -45,4 +50,9 @@ func SigmoidPrecise(x float64) float64 {
 // SoftPlusPrecise is the log(1 + exp(x)) function, using math.Exp
 func SoftPlusPrecise(x float64) float64 {
 	return math.Log(1.0 + math.Exp(x))
+}
+
+// Gaussian01 is the Gaussian function with mean 0 and sigma 1, using math.Exp
+func Gaussian01Precise(x float64) float64 {
+	return math.Exp(-(x * x) / 2.0)
 }

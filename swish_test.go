@@ -2,15 +2,9 @@ package swish
 
 import (
 	"fmt"
+	"math"
 	"testing"
 )
-
-func abs(a float64) float64 {
-	if a >= 0 {
-		return a
-	}
-	return -a
-}
 
 // benchmark using exp256
 func BenchmarkSwish07(b *testing.B) {
@@ -45,14 +39,26 @@ func BenchmarkSwishPrecise03(b *testing.B) {
 }
 
 func TestSwish(t *testing.T) {
-	diff := abs(Swish(0.7) - SwishPrecise(0.7))
+	diff := math.Abs(Swish(0.7) - SwishPrecise(0.7))
 	fmt.Printf("%3.5f\n", diff)
 	if diff >= 0.0002 {
 		t.Fail()
 	}
-	diff = abs(Swish(0.3) - SwishPrecise(0.3))
+	diff = math.Abs(Swish(0.3) - SwishPrecise(0.3))
 	fmt.Printf("%3.5f\n", diff)
 	if diff >= 0.00002 {
+		t.Fail()
+	}
+}
+
+func TestGaussian(t *testing.T) {
+	// Check the accuracy, compared to the result from this
+	// numpy expression (where x = 2.0):
+	//
+	// np.exp(-np.multiply(x, x) / 2.0)
+
+	diff := math.Abs(Gaussian01(2.0) - 0.1353352832366127)
+	if diff >= 0.002 {
 		t.Fail()
 	}
 }
